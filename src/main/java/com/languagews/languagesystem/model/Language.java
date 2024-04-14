@@ -1,18 +1,22 @@
 package com.languagews.languagesystem.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name="languages")
 public class Language {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(name = "Language")
     private String language;
+
+    @Column(name = "Country")
     private String country;
+
+    @Column(name = "Country_Flag_Image_Uri")
     private String countryFlagUri;
 
     public Language() {
