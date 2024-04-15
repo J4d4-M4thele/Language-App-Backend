@@ -5,6 +5,9 @@ import com.languagews.languagesystem.model.Language;
 import java.util.List;
 
 public interface LanguageService {
-    public Language saveLanguage(Language language);
-    public List<Language> getLanguages();
+    Language addLanguage(Language language);
+    List<Language> getLanguages();
+    Language updateLanguage(Language language, Long id);
+    Language getLanguageById(Long id);
+    void deleteLanguage(Long id);
 }

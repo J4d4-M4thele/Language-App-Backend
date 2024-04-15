@@ -15,10 +15,5 @@ public class LanguageController {
     @Autowired
     private LanguageService languageService;
 
-    @PostMapping("/add")
-    public String add(@RequestBody Language language){
-        languageService.saveLanguage(language);
-        return "New language was added";
-    }
 
 }
