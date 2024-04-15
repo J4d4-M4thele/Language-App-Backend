@@ -41,11 +41,16 @@ public class LanguageServiceImpl implements LanguageService {
 
     @Override
     public Language getLanguageById(Long id) {
-        return null;
+        return languageRepository.findById(id)
+                .orElseThrow(() -> new LanguageNotFoundException("Sorry, the language with id: " + id + " could not be found."));
     }
 
     @Override
     public void deleteLanguage(Long id) {
 
+        if(!languageRepository.existsById(id)) {
+            throw new LanguageNotFoundException("Sorry, the language with id: " + id + " could not be found.");
+        }
+        languageRepository.deleteById(id);
     }
 }
