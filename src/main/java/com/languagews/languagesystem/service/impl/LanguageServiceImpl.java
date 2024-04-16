@@ -27,7 +27,7 @@ public class LanguageServiceImpl implements LanguageService {
     }
 
     @Override
-    public Language updateLanguage(Language language, Long id) {
+    public Language updateLanguage(Language language, Integer id) {
         return languageRepository.findById(id)
                 .map(lang -> {
                     lang.setFullName(language.getFullName());
@@ -40,13 +40,13 @@ public class LanguageServiceImpl implements LanguageService {
     }
 
     @Override
-    public Language getLanguageById(Long id) {
+    public Language getLanguageById(Integer id) {
         return languageRepository.findById(id)
                 .orElseThrow(() -> new LanguageNotFoundException("Sorry, the language with id: " + id + " could not be found."));
     }
 
     @Override
-    public void deleteLanguage(Long id) {
+    public void deleteLanguage(Integer id) {
 
         if(!languageRepository.existsById(id)) {
             throw new LanguageNotFoundException("Sorry, the language with id: " + id + " could not be found.");
