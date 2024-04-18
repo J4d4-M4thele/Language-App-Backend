@@ -27,14 +27,14 @@ public class LanguageController {
         return languageService.addLanguage(language);
     }
 
-    @PutMapping("/update/{id}")
-    public Language updateLanguage(@RequestBody Language language,@PathVariable Integer id) {
-        return languageService.updateLanguage(language, id);
+    @PutMapping("/update/{code}")
+    public Language updateLanguage(@RequestBody Language language,@PathVariable String code) {
+        return languageService.updateLanguage(language, code);
     }
 
-    @GetMapping("/language/{id}")
-    public Language getLanguageById(@PathVariable Integer id) {
-        return languageService.getLanguageById(id);
+    @GetMapping("/language/{code}")
+    public Language getLanguageById(@PathVariable String code) {
+        return languageService.getLanguageByCode(code);
     }
 
     @DeleteMapping("/delete/{id}")

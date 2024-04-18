@@ -23,6 +23,8 @@ public class Language {
     private String language;
 
     private String country;
+    
+    private String code;
 
     private String countryFlagUri;
 

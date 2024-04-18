@@ -7,7 +7,7 @@ import java.util.List;
 public interface LanguageService {
     Language addLanguage(Language language);
     List<Language> getLanguages();
-    Language updateLanguage(Language language, Integer id);
-    Language getLanguageById(Integer id);
+    Language updateLanguage(Language language, String code);
+    Language getLanguageByCode(String code);
     void deleteLanguage(Integer id);
 }
